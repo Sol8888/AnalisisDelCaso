@@ -65,19 +65,15 @@ void Menu(int *flag, int Am[NUM_A][NUM_MATERIAS][NUM_SEMESTRES]) {
 
     switch (menu) {
         case 1:
-            system("cls");
             Opcion1(Am);
             break;
         case 2:
-            system("cls");
             Opcion2(Am);
             break;
         case 3:
-            system("cls");
             Opcion3(Am);
             break;
         case 4:
-            system("cls");
             *flag = 0;
             break;
         default:
