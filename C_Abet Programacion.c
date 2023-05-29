@@ -19,6 +19,7 @@ const char *NM[NUM_MATERIAS] = {
 };
 
 void Menu(int *flag, int Am[NUM_A][NUM_MATERIAS][NUM_SEMESTRES]);
+void ImprimirMatriz(int Am[NUM_A][NUM_MATERIAS][NUM_SEMESTRES]);
 void Opcion1(int Am[NUM_A][NUM_MATERIAS][NUM_SEMESTRES]);
 void Opcion2(int Am[NUM_A][NUM_MATERIAS][NUM_SEMESTRES]);
 void Opcion3(int Am[NUM_A][NUM_MATERIAS][NUM_SEMESTRES]);
@@ -38,6 +39,8 @@ int main() {
             }
         }
     }
+
+    ImprimirMatriz(Am);
 
     while (flag) {
         Menu(&flag, Am);
@@ -81,6 +84,22 @@ void Menu(int *flag, int Am[NUM_A][NUM_MATERIAS][NUM_SEMESTRES]) {
             printf("\nNo ha ingresado una opción válida. Por favor, intente de nuevo.\n");
             break;
     }
+}
+
+void ImprimirMatriz(int Am[NUM_A][NUM_MATERIAS][NUM_SEMESTRES]) {
+    printf("Matriz de alumnos matriculados:\n");
+    for (int i = 0; i < NUM_A; i++) {
+        printf("A%d:\n", i + 1);
+        for (int j = 0; j < NUM_MATERIAS; j++) {
+            printf("%s: ", NM[j]);
+            for (int k = 0; k < NUM_SEMESTRES; k++) {
+                printf("%d ", Am[i][j][k]);
+            }
+            printf("\n");
+        }
+        printf("\n");
+    }
+    printf("\n");
 }
 
 void Opcion1(int Am[NUM_A][NUM_MATERIAS][NUM_SEMESTRES]) {
